@@ -1,0 +1,81 @@
+<html ng-app="MyApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular.js</title>
+    <script src="./js/angular.min.js"></script>
+    <script src="./js/angular-route.min.js"></script>
+    <script>
+      var MyApp = angular.module('MyApp', ['ngRoute']);
+      MyApp.config(function($routeProvider) {
+        $routeProvider.
+          when('/', {
+            templateUrl: 'files-list.html',
+            controller: 'FilesListCtrl'
+          }).
+          when('/:countryName', {
+            templateUrl: 'file-detail.html',
+            controller: 'FileDetailCtrl'
+          }).
+          otherwise({
+            redirectTo: '/'
+          });
+      });
+
+      MyApp.factory('files', function ($http) {
+        return{
+          list: function (callback){
+           $http({
+            method: 'GET',
+            url: 'http://127.0.0.1:7000/files/list',
+            cache: true
+            }).success(callback);
+          },
+          find: function(id,title, callback) {
+          console.log("=D",title),
+           $http({
+            method: 'GET',
+            url: 'http://127.0.0.1:7000/files/see/'+ id ,
+            cache:true
+           }).success(callback);
+          }
+        };
+      });
+
+
+      MyApp.directive('file', function(){
+        return {
+          scope: {
+            file: '='
+          },
+          restrict: 'A',
+          templateUrl: 'file.html',
+          controller:function ($scope, files) {
+            // body...
+          files.find($scope.file.id, function(file) {
+              $scope.slug = file.slug;
+          });
+          }
+        };
+      });
+
+
+      MyApp.controller('FilesListCtrl', function ($scope, files){
+        files.list(function (files) {
+          $scope.files = files;
+        })
+      });
+      MyApp.controller('FileDetailCtrl', function ($scope, $routeParams, files){
+        files.find($routeParams.id, function (file) {
+          $scope.file = file;
+        });
+      }); 
+    
+    /* MyApp.filter('encodeURI', function(){
+        return window.encodeURI;
+      });*/
+    </script>
+  </head>
+  <body>
+    <div ng-view></div>
+  </body>
+</html>
