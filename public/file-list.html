@@ -1,4 +1,6 @@
-<ul>
-  <li ng-repeat="file in files" file="file">
+<!-- <ul class="list-unstyled">
+  <li ng-repeat="file in files | filter:buscar" file="file">
   </li>
-</ul>
+</ul> -->
+	<div class="cont-res" ng-repeat="file in files | filter:buscar" file="file">
+	</div>

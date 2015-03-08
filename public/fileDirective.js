@@ -8,7 +8,7 @@ angular.module('fileDirective', [])
           templateUrl: 'file.html',
           controller: function($scope, files){
             files.find($scope.file.id, function(file) {
-              $scope.flagURL = file.flagURL;
+              $scope.content = file.content;
             });
           }
         };

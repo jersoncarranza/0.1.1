@@ -1,7 +1,8 @@
-<h1>{{file.title}}</h1>
-<ul>
-  <li>Flag: <img ng-src="{{file.flagURL}}" width="100"></li>
-  <li>Population: {{file.content}}</li>
-  <li>Capital: {{file.teacher}}</li>
-  <li>GDP: {{file.student }}</li>
+<h3 class="text-primary text-capitalize">{{file.title}}</h3>
+
+<ul class="list-unstyled">
+  <li class="text-capitalize ">{{file.content}}</li>
+  <li class="li-student" ><small><footer>Hecho por <cite title="Fuente">{{file.student}}</cite></footer></small></li>
+  <li class="li-teacher"><small>La materia de {{file.subject}} fue con el tutor {{file.teacher}}</small></li>
+  <li class="li-url"><a href="{{file.url}}">Descargar</a></li>
 </ul>
