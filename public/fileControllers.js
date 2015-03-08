@@ -1,13 +1,13 @@
  var fileControllers = angular.module('fileControllers', []);
 
-fileControllers.controller('FileListCtrl', function ($scope, countries){
-  countries.list(function(countries) {
-    $scope.countries = countries;
-  });
-});
+fileControllers.controller('FilesListCtrl', function ($scope, files){
+        files.list(function(files) {
+          $scope.files = files;
+        });
+      });
 
-fileControllers.controller('FileDetailCtrl', function ($scope, $routeParams, countries){
-  countries.find($routeParams.countryId, function(country) {
-    $scope.country = country;
-  });
-});
+fileControllers.controller('FileyDetailCtrl', function ($scope, $routeParams, files){
+        files.find($routeParams.FileId, function(file) {
+          $scope.file = file;
+        });
+      });

@@ -1,13 +1,15 @@
 angular.module('fileDirective', [])
-       .directive('country', function(){
-  return {
-    scope: { country: '=' },
-    restrict: 'A',
-    templateUrl: 'file.html',
-    controller: function($scope, countries){
-      countries.find($scope.country.id, function(country) {
-      $scope.flagURL = country.flagURL;
+     .directive('file', function(){
+        return {
+          scope: {
+            file: '='
+          },
+          restrict: 'A',
+          templateUrl: 'file.html',
+          controller: function($scope, files){
+            files.find($scope.file.id, function(file) {
+              $scope.flagURL = file.flagURL;
+            });
+          }
+        };
       });
-    }
-  };
-});
