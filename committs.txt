@@ -1,0 +1,29 @@
+commit 38b169a1396748863297c1fa7b16ccf134eb6422
+Author: Jerson Carranza Lucas <jerson_carranza2@hotmail.com>
+Date:   Sun Mar 8 03:10:19 2015 -0500
+
+    master
+
+commit eb00bc6599c188caeb87ae5a2c9fddf36925a4fa
+Author: Jerson Carranza Lucas <jerson_carranza2@hotmail.com>
+Date:   Sun Mar 8 01:06:54 2015 -0500
+
+    0.1.11
+
+commit 0c8a75a5094b0a11d512fc5077df388de4de97d3
+Author: Jerson Carranza Lucas <jerson_carranza2@hotmail.com>
+Date:   Sat Mar 7 19:53:22 2015 -0500
+
+    personalizados
+
+commit d8155daf3fbff67e3ddb58c18ca07279b17e7329
+Author: Jerson Carranza Lucas <jerson_carranza2@hotmail.com>
+Date:   Sat Mar 7 18:00:17 2015 -0500
+
+    personalizado
+
+commit 48a1c12df23af9187edf6df7a295dc6123cc6310
+Author: Jerson Carranza Lucas <jerson_carranza2@hotmail.com>
+Date:   Sat Mar 7 14:17:47 2015 -0500
+
+    master
